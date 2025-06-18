@@ -37,3 +37,5 @@ Même chose pour les objets contacts, qui doivent être chacun une instance de l
 Contact. Vous êtes libre de concevoir vos classes comme vous le sentez. Par contre, ayez
 en tête que ce qui est toujours utilisé dans une classe est privé, et que ce qui peut l’être
 en dehors est public.
+
+possile de convertir des int and float to str, and reverse

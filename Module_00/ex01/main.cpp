@@ -15,11 +15,12 @@
 int	main()
 {
 	char	buff[500];
+	
 
 	while (true)
 	{
 		std::cout << "Enter a command: ";
-		
+
 	}
 	PhoneBook instance( 'a', 42, 4.6);
 	PhoneBook instance2( 'x', 62, 4.000);
