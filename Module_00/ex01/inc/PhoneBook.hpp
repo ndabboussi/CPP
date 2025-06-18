@@ -13,10 +13,18 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
+# include <iostream>
+# include <iomanip>
+# include <string>
+
 class PhoneBook 
 {
 	public:
-		PhoneBook(void);
+		char	a1;
+		int		a2;
+		float	a3;
+
+		PhoneBook(char a1, int a2, float a3);
 		~PhoneBook(void);
 };
 
