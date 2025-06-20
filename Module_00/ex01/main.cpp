@@ -11,40 +11,25 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-int	main()
+int	main(void)
 {
-	char	buff[500];
-	
+	PhoneBook phonebook;
 
 	while (true)
 	{
-		std::cout << "Enter a command: ";
-
+		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
+		std::string command;
+		std::getline(std::cin, command);
+		if (command == "EXIT")
+			break;
+		else if (command == "ADD")
+			phonebook.add_contact();
+		else if (command == "SEARCH")
+			std::cout << "seaarch." << std::endl;
+		else
+			std::cout << "Invalid command, please try again." << std::endl;
 	}
-	PhoneBook instance( 'a', 42, 4.6);
-	PhoneBook instance2( 'x', 62, 4.000);
 	return (0);
 }
-
-// int main(void)
-// {
-// 	PhoneBook phone_book;
-// 	while (true)
-// 	{
-// 		std::cout << "Enter a command: ";
-// 		std::string command;
-// 		std::getline(std::cin, command);
-// 		if (command == "EXIT" || std::cin.eof())
-// 			break;
-// 		else if (command == "ADD")
-// 			add_contact(phone_book);
-// 		else if (command == "SEED")
-// 			contact_seeder(phone_book);
-// 		else if (command == "SEARCH")
-// 			phone_book.search_contact();
-// 		else
-// 			std::cout << "Unknown command." << std::endl;
-// 	}
-// 	return (0);
-// }

@@ -12,12 +12,9 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(char p1, int p2, float p3) : a1(p1), a2(p2), a3(p3)
+PhoneBook::PhoneBook(void) : _size(0), _last_registered_size(0)
 {
 	std::cout << "Constructor called" << std::endl;
-	std::cout << "this->a1 = " << this->a1 << std::endl;
-	std::cout << "this->a2 = " << this->a2 << std::endl;
-	std::cout << "this->a3 = " << this->a3 << std::endl;
 	return;
 }
 
@@ -26,3 +23,18 @@ PhoneBook::~PhoneBook(void)
 	std::cout << "Destructor called" << std::endl;
 	return;
 }
+
+void	PhoneBook::add_contact(void)
+{
+	Contact	contact;
+
+	std::cout << "      Add a new contact :" << std::endl;
+	contact.create_contact();
+	_index[_last_registered_size] = contact;
+	_last_registered_size = (_last_registered_size + 1) % 8;
+	if (_size < 8)
+		_size++;
+	return;
+}
+//need to retrieve which index is available, and if full replace the last one 
+//then add contact to the index

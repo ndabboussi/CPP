@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ndabbous <ndabbous@student.42.fr>          #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-06-17 14:01:21 by ndabbous          #+#    #+#             */
-/*   Updated: 2025-06-17 14:01:21 by ndabbous         ###   ########.fr       */
+/*   Created: 2025-06-18 16:39:43 by ndabbous          #+#    #+#             */
+/*   Updated: 2025-06-18 16:39:43 by ndabbous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
-# include "Contact.hpp"
 # include <iostream>
 # include <iomanip>
 # include <string>
 
-class PhoneBook 
+class Contact
 {
 	public:
-		PhoneBook();
-		void	add_contact(void);
-		~PhoneBook(void);
+		Contact();
+		~Contact(void);
+		void	create_contact();
 	private:
-		Contact	_index[8];
-		int		_size;
-		int		_last_registered_size;
+		std::string first_name;
+		std::string las_name;
+		std::string nickname;
+		std::string phone_nb;
+		std::string darkest_secret;
 };
 
 #endif
