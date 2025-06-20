@@ -17,6 +17,8 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include <cctype>
+# include <algorithm>
 
 class PhoneBook 
 {

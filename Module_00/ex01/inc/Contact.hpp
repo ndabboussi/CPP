@@ -16,6 +16,8 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include <cctype>
+# include <algorithm>
 
 class Contact
 {
@@ -29,6 +31,7 @@ class Contact
 		std::string nickname;
 		std::string phone_nb;
 		std::string darkest_secret;
+	//	std::string infos = "first_name, las_name, nickname, phone_nb, darkest_secret";
 };
 
 #endif
