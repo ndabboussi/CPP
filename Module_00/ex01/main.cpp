@@ -20,13 +20,13 @@ int	main(void)
 	while (true)
 	{
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-		std::string command;
-		std::getline(std::cin, command);
-		if (command == "EXIT")
+		std::string input;
+		std::getline(std::cin, input);
+		if (input == "EXIT")
 			break;
-		else if (command == "ADD")
+		else if (input == "ADD")
 			phonebook.add_contact();
-		else if (command == "SEARCH")
+		else if (input == "SEARCH")
 			std::cout << "seaarch." << std::endl;
 		else
 			std::cout << "Invalid command, please try again." << std::endl;

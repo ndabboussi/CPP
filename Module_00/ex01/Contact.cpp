@@ -14,13 +14,13 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Contact Constructor called" << std::endl;
 	return;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Contact Destructor called" << std::endl;
 	return;
 }
 
@@ -36,34 +36,104 @@ bool is_digits(const std::string &str)
 	return true;
 }
 
+void Contact::setFirstName(std::string value){
+	_first_name = value;
+}
+void Contact::setLastName(std::string value)
+{
+	_las_name = value;
+}
+
+void Contact::setNickname(std::string value) 
+{
+	_nickname = value;
+}
+
+void Contact::setPhoneNumber(std::string value)
+{
+	_phone_nb = value;
+}
+
+void Contact::setDarkestSecret(std::string value)
+{
+	_darkest_secret = value;
+}
+
+// void	Contact::create_contact(void)
+// {
+// 	std::string infos[5];
+// //	first_name, las_name, nickname, phone_nb, darkest_secret;
+
+// 	for (int i = 0; i < 4; i++)
+// 	{
+// 		std::getline(std::cin, infos[i]);
+// 		if (std::cin.eof())
+// 		{
+// 			std::cout << "Error: CTRL+D, exiting add_contact." << std::endl;
+// 			return;
+// 		}
+// 		if (infos[i].empty())
+// 		{
+// 			std::cout << "Error: your input cannot be empty ! Please enter at least 1 character." << std::endl;
+// 			i--;
+// 			continue;
+// 		}
+// 		if (i == 3 && is_digits(infos[i]) <= 0)
+// 		{
+// 			std::cout << "Error: a phone number can only contain digits, please try again." << std::endl;
+// 			i--;
+// 			continue;
+// 		}
+// 	}
+// 	return;
+// }
+
 void	Contact::create_contact(void)
 {
-	std::string infos[5];
-//	first_name, las_name, nickname, phone_nb, darkest_secret;
+	std::string input;
+	//	first_name, las_name, nickname, phone_nb, darkest_secret;
 
-	for (int i = 0; i < 4; i++)
-	{
-		std::getline(std::cin, infos[i]);
-		if (std::cin.eof())
-		{
-			std::cout << "Error: CTRL+D, exiting add_contact." << std::endl;
-			return;
-		}
-		if (infos[i].empty())
-		{
-			std::cout << "Error: your input cannot be empty ! Please enter at least 1 character." << std::endl;
-			i--;
-			continue;
-		}
-		if (i == 3 && is_digits(infos[i]) <= 0)
-		{
-			std::cout << "Error: a phone number can only contain digits, please try again." << std::endl;
-			i--;
-			continue;
-		}
+	std::cout << "First name: ";
+	std::getline(std::cin, input);
+	while (input.empty()) {
+		std::cout << "Input can't be empty. Try again: ";
+		std::getline(std::cin, input);
 	}
-	return;
+	setFirstName(input);
+
+	std::cout << "Last name: ";
+	std::getline(std::cin, input);
+	while (input.empty()) {
+		std::cout << "Input can't be empty. Try again: ";
+		std::getline(std::cin, input);
+	}
+	setLastName(input);
+
+	std::cout << "Nickname: ";
+	std::getline(std::cin, input);
+	while (input.empty()) {
+		std::cout << "Input can't be empty. Try again: ";
+		std::getline(std::cin, input);
+	}
+	setNickname(input);
+
+	std::cout << "Phone number: ";
+	std::getline(std::cin, input);
+	while (input.empty() || !is_digits(input)) {
+		std::cout << "Phone must be numeric and not empty. Try again: ";
+		std::getline(std::cin, input);
+	}
+	setPhoneNumber(input);
+
+	std::cout << "Darkest secret: ";
+	std::getline(std::cin, input);
+	while (input.empty()) {
+		std::cout << "Input can't be empty. Try again: ";
+		std::getline(std::cin, input);
+	}
+	setDarkestSecret(input);
 }
+
 
 // 	for (size_t i = 0; i < this->nbr_inputs; i++)
 // 	{

@@ -14,13 +14,13 @@
 
 PhoneBook::PhoneBook(void) : _size(0), _last_registered_size(0)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Phonebook Constructor called" << std::endl;
 	return;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Phonebook Destructor called" << std::endl;
 	return;
 }
 
@@ -30,7 +30,7 @@ void	PhoneBook::add_contact(void)
 
 	std::cout << "      Add a new contact :" << std::endl;
 	contact.create_contact();
-	_index[_last_registered_size] = contact;
+	//_index[_last_registered_size] = contact;
 	_last_registered_size = (_last_registered_size + 1) % 8;
 	if (_size < 8)
 		_size++;

@@ -32,10 +32,71 @@ contact, remplacez le plus ancien par celui-ci.
 • Contact
 ◦ Représente un contact dans le répertoire.
 
-Dans votre code, l’objet répertoire doit être une instance de la classe PhoneBook.
-Même chose pour les objets contacts, qui doivent être chacun une instance de la classe
-Contact. Vous êtes libre de concevoir vos classes comme vous le sentez. Par contre, ayez
-en tête que ce qui est toujours utilisé dans une classe est privé, et que ce qui peut l’être
-en dehors est public.
-
 possile de convertir des int and float to str, and reverse
+
+
+
+
+
+
+ADD: save a new contact
+◦ If the user enters this command, they are prompted to input the information
+of the new contact one field at a time. Once all the fields have been completed,
+add the contact to the phonebook.
+◦ The contact fields are: first name, last name, nickname, phone number, and
+darkest secret. A saved contact can’t have empty fields.
+• SEARCH: display a specific contact
+◦ Display the saved contacts as a list of 4 columns: index, first name, last
+name and nickname.
+◦ Each column must be 10 characters wide. A pipe character (’|’) separates
+them. The text must be right-aligned. If the text is longer than the column,
+it must be truncated and the last displayable character must be replaced by a
+dot (’.’).
+◦ Then, prompt the user again for the index of the entry to display. If the index
+is out of range or wrong, define a relevant behavior. Otherwise, display the
+contact information, one field per line.
+• EXIT
+◦ The program quits and the contacts are lost forever!
+• Any other input is ignored.
+
+
+
+Tu dois :
+
+    Ajouter des setters pour chaque champ (setFirstName, setLastName, etc.).
+
+    Ajouter une fonction create_contact() qui :
+
+        Demande à l'utilisateur les 5 champs.
+
+        Vérifie que chaque champ n'est pas vide.
+
+        Stocke les valeurs dans les variables membres de Contact.
+
+tableau infos[5] est correct, mais actuellement, rien n’est stocké dans les attributs privés (_first_name, etc.). Tu dois utiliser les setters pour ça.
+
+2. Compléter add_contact() dans PhoneBook
+
+Tu l’as bien commencé. Les étapes sont :
+
+    Appeler create_contact() pour un nouveau Contact.
+
+    Stocker ce contact dans _index[_last_registered_size].
+
+    Mettre à jour _last_registered_size avec (_last_registered_size + 1) % 8 (ce que tu fais bien).
+
+    Incrémenter _size si elle est < 8.
+
+Améliorations nécessaires :
+
+    Ton champ _las_name a une faute : c’est last_name (avec un t).
+
+3. Ajouter la commande SEARCH plus tard
+
+Ce sera la prochaine étape une fois le ADD terminé. Tu devras :
+
+    Afficher un tableau de tous les contacts.
+
+    Demander un index.
+
+    Afficher les détails du contact sélectionné.

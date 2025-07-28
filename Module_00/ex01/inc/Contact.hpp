@@ -25,13 +25,19 @@ class Contact
 		Contact();
 		~Contact(void);
 		void	create_contact();
+		void	setFirstName(std::string value);
+		void 	setLastName(std::string value);
+		void 	setNickname(std::string value);
+		void 	setPhoneNumber(std::string value);
+		void 	setDarkestSecret(std::string value);
+
 	private:
-		std::string first_name;
-		std::string las_name;
-		std::string nickname;
-		std::string phone_nb;
-		std::string darkest_secret;
-	//	std::string infos = "first_name, las_name, nickname, phone_nb, darkest_secret";
+		std::string _first_name;
+		std::string _las_name;
+		std::string _nickname;
+		std::string _phone_nb;
+		std::string _darkest_secret;
+	//	std::string infos = "first_name, last_name, nickname, phone_nb, darkest_secret";
 };
 
 #endif
