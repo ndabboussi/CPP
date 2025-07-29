@@ -68,3 +68,53 @@ Ce sera la prochaine étape une fois le ADD terminé. Tu devras :
     Demander un index.
 
     Afficher les détails du contact sélectionné.
+
+
+    Enter a command (ADD, SEARCH, EXIT): SEARCH
+|     Index|First Name| Last Name|  Nickname|
+|         0|      nina|         d|         f|
+|         1|      echo|       ehe|         d|
+|         2|         1|         a|         a|
+|         3|         2|         s|         s|
+|         4|         3|         d|         d|
+|         5|         4|         f|         f|
+|         6|         5|         5|         5|
+|         7|         6|         6|         6|
+        Which contact would you like to consult ?
+Enter a command (ADD, SEARCH, EXIT): ADD
+        Add a new contact :
+                First name: 8
+                Last name: 8
+                Nickname: 8
+                Phone number: 8
+                Darkest secret: 8
+Enter a command (ADD, SEARCH, EXIT): SEARCH
+|     Index|First Name| Last Name|  Nickname|
+|         0|      nina|         d|         f|
+|         1|      echo|       ehe|         d|
+|         2|         1|         a|         a|
+|         3|         2|         s|         s|
+|         4|         3|         d|         d|
+|         5|         4|         f|         f|
+|         6|         5|         5|         5|
+|         7|         8|         8|         8|
+        Which contact would you like to consult ?
+Enter a command (ADD, SEARCH, EXIT): ADD
+        Add a new contact :
+                First name: HELLO
+                Last name: HELLO
+                Nickname: HELLO
+                Phone number: 100000
+                Darkest secret: HELLO
+Enter a command (ADD, SEARCH, EXIT): SEARCH
+|     Index|First Name| Last Name|  Nickname|
+|         0|     HELLO|     HELLO|     HELLO|
+|         1|      echo|       ehe|         d|
+|         2|         1|         a|         a|
+|         3|         2|         s|         s|
+|         4|         3|         d|         d|
+|         5|         4|         f|         f|
+|         6|         5|         5|         5|
+|         7|         8|         8|         8|
+        Which contact would you like to consult ?
+Enter a command (ADD, SEARCH, EXIT): ^C

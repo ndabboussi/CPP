@@ -16,8 +16,19 @@
 # include <iostream>
 # include <iomanip>
 # include <string>
+# include <cstring>
+# include <limits>
 # include <cctype>
 # include <algorithm>
+
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+#define BOLD    "\033[1m"
 
 class Contact
 {
@@ -30,6 +41,12 @@ class Contact
 		void 	setNickname(std::string value);
 		void 	setPhoneNumber(std::string value);
 		void 	setDarkestSecret(std::string value);
+		std::string getFirstName() const;
+		std::string getLastName() const;
+		std::string getNickname() const;
+		std::string getPhoneNumber() const;
+		std::string getDarkestSecret() const;
+
 
 	private:
 		std::string _first_name;
