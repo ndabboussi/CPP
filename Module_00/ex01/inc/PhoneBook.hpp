@@ -27,7 +27,7 @@ class PhoneBook
 		void	add_contact(void);
 		~PhoneBook(void);
 	private:
-		//Contact	_index[8];
+		Contact	_contacts[8];
 		int		_size;
 		int		_last_registered_size;
 };

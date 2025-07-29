@@ -37,11 +37,11 @@ bool is_digits(const std::string &str)
 }
 
 void Contact::setFirstName(std::string value){
-	_first_name = value;
+	this->_first_name = value;
 }
 void Contact::setLastName(std::string value)
 {
-	_las_name = value;
+	_last_name = value;
 }
 
 void Contact::setNickname(std::string value) 
@@ -59,10 +59,55 @@ void Contact::setDarkestSecret(std::string value)
 	_darkest_secret = value;
 }
 
+void	Contact::create_contact(void)
+{
+	std::string input;
+
+	std::cout << "		First name: ";
+	std::getline(std::cin, input);
+	while (input.empty()) {
+		std::cout << "		Error: input cannot be empty ! Please try again: ";
+		std::getline(std::cin, input);
+	}
+	setFirstName(input);
+
+	std::cout << "		Last name: ";
+	std::getline(std::cin, input);
+	while (input.empty()) {
+		std::cout << "		Error: input cannot be empty ! Please try again: ";
+		std::getline(std::cin, input);
+	}
+	setLastName(input);
+
+	std::cout << "		Nickname: ";
+	std::getline(std::cin, input);
+	while (input.empty()) {
+		std::cout << "		Error: input cannot be empty ! Please try again: ";
+		std::getline(std::cin, input);
+	}
+	setNickname(input);
+
+	std::cout << "		Phone number: ";
+	std::getline(std::cin, input);
+	while (input.empty() || !is_digits(input)) {
+		std::cout << "		Error: phone number must be numeric and not empty. Please try again: ";
+		std::getline(std::cin, input);
+	}
+	setPhoneNumber(input);
+
+	std::cout << "		Darkest secret: ";
+	std::getline(std::cin, input);
+	while (input.empty()) {
+		std::cout << "		Error: input cannot be empty ! Please try again: ";
+		std::getline(std::cin, input);
+	}
+	setDarkestSecret(input);
+}
+
 // void	Contact::create_contact(void)
 // {
 // 	std::string infos[5];
-// //	first_name, las_name, nickname, phone_nb, darkest_secret;
+// //	first_name, last_name, nickname, phone_nb, darkest_secret;
 
 // 	for (int i = 0; i < 4; i++)
 // 	{
@@ -87,53 +132,6 @@ void Contact::setDarkestSecret(std::string value)
 // 	}
 // 	return;
 // }
-
-void	Contact::create_contact(void)
-{
-	std::string input;
-	//	first_name, las_name, nickname, phone_nb, darkest_secret;
-
-	std::cout << "First name: ";
-	std::getline(std::cin, input);
-	while (input.empty()) {
-		std::cout << "Input can't be empty. Try again: ";
-		std::getline(std::cin, input);
-	}
-	setFirstName(input);
-
-	std::cout << "Last name: ";
-	std::getline(std::cin, input);
-	while (input.empty()) {
-		std::cout << "Input can't be empty. Try again: ";
-		std::getline(std::cin, input);
-	}
-	setLastName(input);
-
-	std::cout << "Nickname: ";
-	std::getline(std::cin, input);
-	while (input.empty()) {
-		std::cout << "Input can't be empty. Try again: ";
-		std::getline(std::cin, input);
-	}
-	setNickname(input);
-
-	std::cout << "Phone number: ";
-	std::getline(std::cin, input);
-	while (input.empty() || !is_digits(input)) {
-		std::cout << "Phone must be numeric and not empty. Try again: ";
-		std::getline(std::cin, input);
-	}
-	setPhoneNumber(input);
-
-	std::cout << "Darkest secret: ";
-	std::getline(std::cin, input);
-	while (input.empty()) {
-		std::cout << "Input can't be empty. Try again: ";
-		std::getline(std::cin, input);
-	}
-	setDarkestSecret(input);
-}
-
 
 // 	for (size_t i = 0; i < this->nbr_inputs; i++)
 // 	{
