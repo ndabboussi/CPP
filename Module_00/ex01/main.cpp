@@ -17,6 +17,7 @@ int	main(void)
 {
 	PhoneBook phonebook;
 
+	std::cout << MAGENTA << "Welcome ! Have fun with your PhoneBook <3" << RESET << std::endl;
 	while (true)
 	{
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
@@ -27,9 +28,13 @@ int	main(void)
 		else if (input == "ADD")
 			phonebook.add_contact();
 		else if (input == "SEARCH")
-			std::cout << "seaarch." << std::endl;
+		{
+			phonebook.search_contact();
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		}
 		else
-			std::cout << "Invalid command, please try again." << std::endl;
+			std::cout << YELLOW << "Invalid command, please try again." << RESET << std::endl;
 	}
 	return (0);
 }
