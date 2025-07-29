@@ -59,38 +59,6 @@ contact information, one field per line.
 ◦ The program quits and the contacts are lost forever!
 • Any other input is ignored.
 
-
-
-Tu dois :
-
-    Ajouter des setters pour chaque champ (setFirstName, setLastName, etc.).
-
-    Ajouter une fonction create_contact() qui :
-
-        Demande à l'utilisateur les 5 champs.
-
-        Vérifie que chaque champ n'est pas vide.
-
-        Stocke les valeurs dans les variables membres de Contact.
-
-tableau infos[5] est correct, mais actuellement, rien n’est stocké dans les attributs privés (_first_name, etc.). Tu dois utiliser les setters pour ça.
-
-2. Compléter add_contact() dans PhoneBook
-
-Tu l’as bien commencé. Les étapes sont :
-
-    Appeler create_contact() pour un nouveau Contact.
-
-    Stocker ce contact dans _index[_last_registered_size].
-
-    Mettre à jour _last_registered_size avec (_last_registered_size + 1) % 8 (ce que tu fais bien).
-
-    Incrémenter _size si elle est < 8.
-
-Améliorations nécessaires :
-
-    Ton champ _las_name a une faute : c’est last_name (avec un t).
-
 3. Ajouter la commande SEARCH plus tard
 
 Ce sera la prochaine étape une fois le ADD terminé. Tu devras :
