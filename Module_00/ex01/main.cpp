@@ -22,17 +22,18 @@ int	main(void)
 	{
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::string input;
-		std::getline(std::cin, input);
+		// std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "\nEOF received. Exiting program." << std::endl;
+			break;
+		}
 		if (input == "EXIT")
 			break;
 		else if (input == "ADD")
 			phonebook.add_contact();
 		else if (input == "SEARCH")
-		{
 			phonebook.search_contact();
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		}
 		else
 			std::cout << YELLOW << "Invalid command, please try again." << RESET << std::endl;
 	}
