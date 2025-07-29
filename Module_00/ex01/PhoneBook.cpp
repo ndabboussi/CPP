@@ -95,19 +95,21 @@ void	PhoneBook::search_contact(void) const
 	while (true)
 	{
 		std::cout << "\nEnter an index to view full contact: ";
-		//std::cin >> input;
+	//	std::cin >> input;
 		// if (!std::getline(std::cin, input))
 		// {
 		// 	std::cout << RED << "\nInput interrupted (EOF).\n" << RESET;
 		// 	std::cin.clear();
 		// 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		// 	return;
-		// }
+		//}
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
-			std::cout << "Error: Input stream closed." << std::endl;
-			return;
+		 	std::cout << RED << "\nInput interrupted (EOF).\n" << RESET;
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			continue;
 		}
 		if (input.length() == 1 && std::isdigit(input[0]))
 		{
