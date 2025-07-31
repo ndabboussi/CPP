@@ -28,6 +28,7 @@
 #define BLUE    "\033[34m"
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
+#define GREY	"\033[90m"
 #define BOLD    "\033[1m"
 
 class Contact

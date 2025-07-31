@@ -14,11 +14,13 @@
 
 Contact::Contact(void)
 {
+	std::cout << GREY << "Contact constructor called" << RESET << std::endl;
 	return;
 }
 
 Contact::~Contact(void)
 {
+	std::cout << GREY << "Contact destructor called" << RESET << std::endl;
 	return;
 }
 

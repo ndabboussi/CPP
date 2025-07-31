@@ -16,11 +16,13 @@ PhoneBook::PhoneBook(void)
 {
 	_size = 0;
 	_last_registered_size = 0;
+	std::cout << GREY << "Phonebook constructor called" << RESET << std::endl;
 	return;
 }
 
 PhoneBook::~PhoneBook(void)
 {
+	std::cout << GREY << "PhoneBook destructor called" << RESET << std::endl;
 	return;
 }
 
@@ -118,7 +120,7 @@ void	PhoneBook::search_contact(void) const
 				break;
 		}
 		std::cout << YELLOW << "Invalid index, please enter a number within the range of your contacts nb (1 to " 
-		          << this->_size << ").\n" << RESET;
+		          << this->_size << ")." << RESET;
 	}
 	display_contact(index);
 }
