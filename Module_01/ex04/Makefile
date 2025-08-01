@@ -6,7 +6,7 @@ CFLAGS = -Wall -Werror -Wextra -g3 -std=c++98 -Iinc
 INC_DIR = ./inc/
 OBJ_DIR = obj/
 
-SRC_FILES = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC_FILES = main.cpp Replacer.cpp
 OBJ_FILES = $(addprefix $(OBJ_DIR), $(SRC_FILES:.cpp=.o))
 
 all: $(NAME)

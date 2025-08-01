@@ -55,7 +55,6 @@ class Contact
 		std::string _nickname;
 		std::string _phone_nb;
 		std::string _darkest_secret;
-	//	std::string infos = "first_name, last_name, nickname, phone_nb, darkest_secret";
 };
 
 #endif

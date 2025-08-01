@@ -97,22 +97,19 @@ void	PhoneBook::search_contact(void) const
 	while (true)
 	{
 		std::cout << "\nEnter an index to view full contact: ";
-	//	std::cin >> input;
-		// if (!std::getline(std::cin, input))
-		// {
-		// 	std::cout << RED << "\nInput interrupted (EOF).\n" << RESET;
-		// 	std::cin.clear();
-		// 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		// 	return;
-		//}
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 		{
-		 	std::cout << RED << "\nInput interrupted (EOF).\n" << RESET;
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << YELLOW << "Error: Input stream closed (CTRL+D)." << RESET << std::endl;
+			return;
+		}
+		if (input.empty())
+		{
+			std::cout << YELLOW << "Invalid index, please enter a number within the range of your contacts nb (1 to " 
+		          << this->_size << ")." << RESET;
 			continue;
 		}
+
 		if (input.length() == 1 && std::isdigit(input[0]))
 		{
 			index = input[0] - '0' - 1;
@@ -124,3 +121,22 @@ void	PhoneBook::search_contact(void) const
 	}
 	display_contact(index);
 }
+
+	//	std::cin >> input;
+		// if (!std::getline(std::cin, input))
+		// {
+		// 	std::cout << RED << "\nInput interrupted (EOF).\n" << RESET;
+		// 	std::cin.clear();
+		// 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		// 	return;
+		//}
+
+
+		// std::getline(std::cin, input);
+		// if (std::cin.eof())
+		// {
+		//  	std::cout << RED << "\nInput interrupted (EOF).\n" << RESET;
+		// 	std::cin.clear();
+		// 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		// 	continue;
+		// }

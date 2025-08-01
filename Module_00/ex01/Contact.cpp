@@ -83,134 +83,45 @@ std::string Contact::getDarkestSecret() const
 	return _darkest_secret;
 }
 
-void	getInput(std::string &input)
-{
-	std::getline(std::cin, input);
-	if (!std::cin)
-		input.clear();
-	
-}
-
 void	Contact::create_contact(void)
 {
-	std::string input;
+	const	std::string infos[] = {"First name", "Last name", "Nickname", "Phone number", "Darkest secret"};
 
-	std::cout << "		First name: ";
-	if (!input.empty())
-		input.clear();
-	while(input.empty())
+	for (int i = 0; i < 5; i++)
 	{
-		getInput(input);
-	}
-	if (!std::cin)
-		input.clear();
-	// if (input == "")
-	// {
-	// 	std::cout << "HELLO" << std::endl;
-	// }
-	// //	je me casse
-	while (input.empty()) {
-		std::cout << YELLOW << "		Error: input cannot be empty ! Please try again: " << RESET;
+		std::cout << "		" << infos[i] << ": ";
+		std::string input;
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << YELLOW << "Error: Input stream closed (CTRL+D)." << RESET << std::endl;
+			return;
+		}
+		if (input.empty())
+		{
+			std::cout << YELLOW << "		Error: input cannot be empty ! Please try again: " << RESET;
+			i--;
+			continue;
+		}
+		if (i == 3 && (input.empty() || !is_digits(input)))
+		{
+			std::cout << YELLOW << "		Error: phone number must be numeric and not empty. Please try again: " << RESET;
+			i--;
+			continue;
+		}
+		if (i == 0)
+			setFirstName(input);
+		else if (i == 1)
+			setLastName(input);
+		else if (i == 2)
+			setNickname(input);
+		else if (i == 3)
+			setPhoneNumber(input);
+		else if (i == 4)
+		{
+			setDarkestSecret(input);
+			std::cout << std::endl;
+		}
 	}
-	setFirstName(input);
-	
-	std::cout << "		Last name: ";
-	std::getline(std::cin, input);
-	while (input.empty()) {
-		std::cout << YELLOW << "		Error: input cannot be empty ! Please try again: " << RESET;
-		std::getline(std::cin, input);
-	}
-	setLastName(input);
-
-	std::cout << "		Nickname: ";
-	std::getline(std::cin, input);
-	while (input.empty()) {
-		std::cout << YELLOW << "		Error: input cannot be empty ! Please try again: " << RESET;
-		std::getline(std::cin, input);
-	}
-	setNickname(input);
-
-	std::cout << "		Phone number: ";
-	std::getline(std::cin, input);
-	while (input.empty() || !is_digits(input)) {
-		std::cout << YELLOW << "		Error: phone number must be numeric and not empty. Please try again: " << RESET;
-		std::getline(std::cin, input);
-	}
-	setPhoneNumber(input);
-
-	std::cout << "		Darkest secret: ";
-	std::getline(std::cin, input);
-	while (input.empty()) {
-		std::cout << YELLOW << "		Error: input cannot be empty ! Please try again: " << RESET;
-		std::getline(std::cin, input);
-
-	}
-	setDarkestSecret(input);
-	std::cout << std::endl;
+	return;
 }
-
-// void	Contact::create_contact(void)
-// {
-// 	std::string infos[5];
-// //	first_name, last_name, nickname, phone_nb, darkest_secret;
-
-// 	for (int i = 0; i < 4; i++)
-// 	{
-// 		std::getline(std::cin, infos[i]);
-// 		if (std::cin.eof())
-// 		{
-// 			std::cout << "Error: CTRL+D, exiting add_contact." << std::endl;
-// 			return;
-// 		}
-// 		if (infos[i].empty())
-// 		{
-// 			std::cout << "Error: your input cannot be empty ! Please enter at least 1 character." << std::endl;
-// 			i--;
-// 			continue;
-// 		}
-// 		if (i == 3 && is_digits(infos[i]) <= 0)
-// 		{
-// 			std::cout << "Error: a phone number can only contain digits, please try again." << std::endl;
-// 			i--;
-// 			continue;
-// 		}
-// 	}
-// 	return;
-// }
-
-// 	for (size_t i = 0; i < this->nbr_inputs; i++)
-// 	{
-// 		std::cout << "Enter " << fields[i] << ": ";
-// 		std::string input;
-// 		std::getline(std::cin, input);
-// 		if (std::cin.eof())
-// 		{
-// 			std::cout << "Error: Input stream closed." << std::endl;
-// 			return;
-// 		}
-// 		if (input.empty())
-// 		{
-// 			std::cout << "Error: " << fields[i] << " cannot be empty." << std::endl;
-// 			i--;
-// 			continue;
-// 		}
-// 		contact->set_field(fields[i], input);
-
-
-//  std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
-
-//     std::cout << "Enter first name: ";
-//     std::getline(std::cin, firstName);
-//     if (std::cin.eof())
-//     {
-//         std::cout << "\nCTRL+D was pressed. Exiting addContact.\n";
-//         return -2;
-//     }
-//     firstName = trim(firstName);
-//     firstName = reduceMultipleSpacesToOne(firstName);
-//     if (std::cin.eof())
-//     {
-//         std::cout << "\nCTRL+D was pressed. Exiting addContact.\n";
-//         return -2;
-//     }
