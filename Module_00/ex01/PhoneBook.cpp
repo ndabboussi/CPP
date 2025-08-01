@@ -117,26 +117,7 @@ void	PhoneBook::search_contact(void) const
 				break;
 		}
 		std::cout << YELLOW << "Invalid index, please enter a number within the range of your contacts nb (1 to " 
-		          << this->_size << ")." << RESET;
+				<< this->_size << ")." << RESET;
 	}
 	display_contact(index);
 }
-
-	//	std::cin >> input;
-		// if (!std::getline(std::cin, input))
-		// {
-		// 	std::cout << RED << "\nInput interrupted (EOF).\n" << RESET;
-		// 	std::cin.clear();
-		// 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		// 	return;
-		//}
-
-
-		// std::getline(std::cin, input);
-		// if (std::cin.eof())
-		// {
-		//  	std::cout << RED << "\nInput interrupted (EOF).\n" << RESET;
-		// 	std::cin.clear();
-		// 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		// 	continue;
-		// }
