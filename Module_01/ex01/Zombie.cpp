@@ -1,4 +1,4 @@
-#include "Zombie.hpp"
+#include "inc/Zombie.hpp"
 
 Zombie::Zombie(void)
 {
@@ -15,11 +15,16 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie(void)
 {
-	std::cout << GREY << this->_name << " destructor called." RESET << std::endl;
+	std::cout << GREY << "Zombie destructor called." RESET << std::endl;
 	return;
+}
+
+void	Zombie::setName(std::string name)
+{
+	this->_name = name;
 }
 
 void	Zombie::announce(void)
 {
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": hello you cuty !!!" << std::endl;
 }

@@ -5,21 +5,22 @@
 # include <string>
 
 #define GREY	"\033[90m"
+#define PINK	"\033[35m"
 #define	RESET	"\033[0m"
 
-class Zombie
+class	Zombie
 {
 	public:
 		Zombie();
 		Zombie(std::string name);
 		~Zombie();
 		void announce(void);
+		void setName(std::string name);
 
 	private:
 		std::string	_name;
 };
 
-Zombie* newZombie(std::string name);
-void	randomChump(std::string name);
+Zombie* zombieHorde(int N, std::string name);
 
 #endif

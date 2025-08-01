@@ -22,7 +22,7 @@ int	main(void)
 	{
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::string input;
-		// std::getline(std::cin, input);
+	//	std::getline(std::cin, input);
 		if (!std::getline(std::cin, input))
 		{
 			std::cout << "\nEOF received. Exiting program." << std::endl;

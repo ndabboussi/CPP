@@ -83,18 +83,38 @@ std::string Contact::getDarkestSecret() const
 	return _darkest_secret;
 }
 
+void	getInput(std::string &input)
+{
+	std::getline(std::cin, input);
+	if (!std::cin)
+		input.clear();
+	
+}
+
 void	Contact::create_contact(void)
 {
 	std::string input;
 
 	std::cout << "		First name: ";
-	std::getline(std::cin, input);
+	if (!input.empty())
+		input.clear();
+	while(input.empty())
+	{
+		getInput(input);
+	}
+	if (!std::cin)
+		input.clear();
+	// if (input == "")
+	// {
+	// 	std::cout << "HELLO" << std::endl;
+	// }
+	// //	je me casse
 	while (input.empty()) {
 		std::cout << YELLOW << "		Error: input cannot be empty ! Please try again: " << RESET;
 		std::getline(std::cin, input);
 	}
 	setFirstName(input);
-
+	
 	std::cout << "		Last name: ";
 	std::getline(std::cin, input);
 	while (input.empty()) {
